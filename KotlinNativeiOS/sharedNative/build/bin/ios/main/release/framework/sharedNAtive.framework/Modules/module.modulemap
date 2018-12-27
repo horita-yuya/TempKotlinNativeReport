@@ -1,0 +1,6 @@
+framework module sharedNAtive {
+    umbrella header "sharedNAtive.h"
+
+    export *
+    module * { export * }
+}
