@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 __attribute__((objc_runtime_name("KotlinMutableSet")))
 __attribute__((swift_name("KotlinMutableSet")))
-@interface SNAMutableSet<ObjectType> : NSMutableSet<ObjectType>
+@interface SharedNativeMutableSet<ObjectType> : NSMutableSet<ObjectType>
 @end;
 
 __attribute__((objc_runtime_name("KotlinMutableDictionary")))
 __attribute__((swift_name("KotlinMutableDictionary")))
-@interface SNAMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
+@interface SharedNativeMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 @end;
 
 @interface NSError (NSErrorKotlinException)
@@ -27,7 +27,7 @@ __attribute__((swift_name("KotlinMutableDictionary")))
 
 __attribute__((objc_runtime_name("KotlinNumber")))
 __attribute__((swift_name("KotlinNumber")))
-@interface SNANumber : NSNumber
+@interface SharedNativeNumber : NSNumber
 - (instancetype)initWithChar:(char)value __attribute__((unavailable));
 - (instancetype)initWithUnsignedChar:(unsigned char)value __attribute__((unavailable));
 - (instancetype)initWithShort:(short)value __attribute__((unavailable));
@@ -62,79 +62,85 @@ __attribute__((swift_name("KotlinNumber")))
 
 __attribute__((objc_runtime_name("KotlinByte")))
 __attribute__((swift_name("KotlinByte")))
-@interface SNAByte : SNANumber
+@interface SharedNativeByte : SharedNativeNumber
 - (instancetype)initWithChar:(char)value;
 + (instancetype)numberWithChar:(char)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinUByte")))
 __attribute__((swift_name("KotlinUByte")))
-@interface SNAUByte : SNANumber
+@interface SharedNativeUByte : SharedNativeNumber
 - (instancetype)initWithUnsignedChar:(unsigned char)value;
 + (instancetype)numberWithUnsignedChar:(unsigned char)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinShort")))
 __attribute__((swift_name("KotlinShort")))
-@interface SNAShort : SNANumber
+@interface SharedNativeShort : SharedNativeNumber
 - (instancetype)initWithShort:(short)value;
 + (instancetype)numberWithShort:(short)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinUShort")))
 __attribute__((swift_name("KotlinUShort")))
-@interface SNAUShort : SNANumber
+@interface SharedNativeUShort : SharedNativeNumber
 - (instancetype)initWithUnsignedShort:(unsigned short)value;
 + (instancetype)numberWithUnsignedShort:(unsigned short)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinInt")))
 __attribute__((swift_name("KotlinInt")))
-@interface SNAInt : SNANumber
+@interface SharedNativeInt : SharedNativeNumber
 - (instancetype)initWithInt:(int)value;
 + (instancetype)numberWithInt:(int)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinUInt")))
 __attribute__((swift_name("KotlinUInt")))
-@interface SNAUInt : SNANumber
+@interface SharedNativeUInt : SharedNativeNumber
 - (instancetype)initWithUnsignedInt:(unsigned int)value;
 + (instancetype)numberWithUnsignedInt:(unsigned int)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinLong")))
 __attribute__((swift_name("KotlinLong")))
-@interface SNALong : SNANumber
+@interface SharedNativeLong : SharedNativeNumber
 - (instancetype)initWithLongLong:(long long)value;
 + (instancetype)numberWithLongLong:(long long)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinULong")))
 __attribute__((swift_name("KotlinULong")))
-@interface SNAULong : SNANumber
+@interface SharedNativeULong : SharedNativeNumber
 - (instancetype)initWithUnsignedLongLong:(unsigned long long)value;
 + (instancetype)numberWithUnsignedLongLong:(unsigned long long)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinFloat")))
 __attribute__((swift_name("KotlinFloat")))
-@interface SNAFloat : SNANumber
+@interface SharedNativeFloat : SharedNativeNumber
 - (instancetype)initWithFloat:(float)value;
 + (instancetype)numberWithFloat:(float)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinDouble")))
 __attribute__((swift_name("KotlinDouble")))
-@interface SNADouble : SNANumber
+@interface SharedNativeDouble : SharedNativeNumber
 - (instancetype)initWithDouble:(double)value;
 + (instancetype)numberWithDouble:(double)value;
 @end;
 
 __attribute__((objc_runtime_name("KotlinBoolean")))
 __attribute__((swift_name("KotlinBoolean")))
-@interface SNABoolean : SNANumber
+@interface SharedNativeBoolean : SharedNativeNumber
 - (instancetype)initWithBool:(BOOL)value;
 + (instancetype)numberWithBool:(BOOL)value;
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ActualKt")))
+@interface SharedNativeActualKt : KotlinBase
++ (void)callDelay __attribute__((swift_name("callDelay()")));
 @end;
 
 NS_ASSUME_NONNULL_END
