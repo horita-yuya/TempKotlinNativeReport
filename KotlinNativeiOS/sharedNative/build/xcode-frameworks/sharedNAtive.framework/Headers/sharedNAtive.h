@@ -140,7 +140,14 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ActualKt")))
 @interface SharedNativeActualKt : KotlinBase
-+ (void)callDelay __attribute__((swift_name("callDelay()")));
++ (NSString *)currentTime __attribute__((swift_name("currentTime()")));
++ (void)crash __attribute__((swift_name("crash()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("CommonKt")))
+@interface SharedNativeCommonKt : KotlinBase
++ (void)showCurrentTime __attribute__((swift_name("showCurrentTime()")));
 @end;
 
 NS_ASSUME_NONNULL_END

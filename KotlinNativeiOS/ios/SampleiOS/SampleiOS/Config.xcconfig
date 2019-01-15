@@ -1,1 +1,3 @@
+#include "Pods/Target Support Files/Pods-SampleiOS/Pods-SampleiOS.debug.xcconfig"
+
 FRAMEWORK_SEARCH_PATHS = $(inherited) $SRCROOT/../../sharedNative/build/xcode-frameworks
