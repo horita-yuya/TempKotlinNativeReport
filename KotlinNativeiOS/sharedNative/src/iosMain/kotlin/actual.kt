@@ -6,9 +6,9 @@ import platform.darwin.dispatch_get_main_queue
 import kotlin.coroutines.CoroutineContext
 
 fun callDelay() {
-    MainScope().launch {
-        delay(1000L)
-        println("Hello Coroutines")
+    runBlocking {
+        delay(1000)
+        println("blocked")
     }
 }
 
